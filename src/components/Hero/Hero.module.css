@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@400..900&family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    font-family: "Roboto", sans-serif; /* Default font for everything */
+}
+
+.maxWidth {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+    background: #fafafa; /* Light background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.headingLanguage {
+    font-family: "Anton", sans-serif;
+    font-size: 70px;
+    text-align: center;
+}
+
+.spanLanguage {
+    font-family: "Anton", sans-serif;
+    color: rgb(245, 114, 245);
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.card p {
+    color: #666;
+    font-size: 16px;
+}
