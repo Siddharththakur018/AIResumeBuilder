@@ -16,7 +16,7 @@ function Login() {
         try {
             await signInWithEmailAndPassword(auth, email, password);
             localStorage.setItem('isLoggedIn', true);
-            navigate('/resume-page');
+            navigate('/AIResumeBuilder/#/resume-page'); // ✅ Fix navigation
         } catch (error) {
             setError('Invalid email or password.');
             console.log(error);
@@ -28,7 +28,7 @@ function Login() {
         const provider = new GoogleAuthProvider();
         try {
             await signInWithPopup(auth, provider);
-            navigate('/resume-page');
+            navigate('/AIResumeBuilder/#/resume-page'); // ✅ Fix navigation
         } catch (error) {
             console.log(error);
             setError('Google login failed. Please try again.');
@@ -78,10 +78,20 @@ function Login() {
                 </div>
 
                 <div className="flex justify-between items-center mt-6 text-gray-400 text-sm">
-                    <a href="/forgot-password" className="hover:text-white">Forgot Password?</a>
+                    <span 
+                        className="hover:text-white cursor-pointer"
+                        onClick={() => navigate('/AIResumeBuilder/#/forgot-password')} // ✅ Fix navigation
+                    >
+                        Forgot Password?
+                    </span>
                     <span>
                         Don't have an account? 
-                        <a href="/register" className="text-white ml-1 hover:underline">Register</a>
+                        <span 
+                            className="text-white ml-1 hover:underline cursor-pointer"
+                            onClick={() => navigate('/AIResumeBuilder/#/register')} // ✅ Fix navigation
+                        >
+                            Register
+                        </span>
                     </span>
                 </div>
             </form>
