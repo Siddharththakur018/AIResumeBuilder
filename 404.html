@@ -6,8 +6,7 @@
     <title>Redirecting...</title>
     <script>
         (function() {
-            var path = window.location.pathname.replace('/AIResumeBuilder', ''); 
-            var hash = window.location.hash || "#/";
+            var hash = window.location.hash.startsWith("#/") ? window.location.hash : "#/";
             window.location.replace("/AIResumeBuilder" + hash);
         })();
     </script>
