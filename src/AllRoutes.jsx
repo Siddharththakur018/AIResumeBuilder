@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import LandingPage from './components/LandingPage/LandingPage';
 import Login from './components/Login/Login';
 import MainPage from './components/MainPage/MainPage';
@@ -10,7 +10,7 @@ import CardPage from './components/CardPage/CardPage';
 
 function AllRoutes() {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Navbar />
             <Routes>
                 <Route path="/" element={<LandingPage />} />
@@ -21,7 +21,7 @@ function AllRoutes() {
                 <Route path="/card-page" element={<CardPage />} />
                 <Route path="/resume/:id" element={<ResumePage />} /> {/* For editing existing resume */}
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
