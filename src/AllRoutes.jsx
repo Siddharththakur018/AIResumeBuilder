@@ -13,13 +13,13 @@ function AllRoutes() {
         <HashRouter>
             <Navbar />
             <Routes>
-                <Route path="/" element={<LandingPage />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/resume-page" element={<MainPage />} />    
-                <Route path="/resume" element={<ResumePage />} /> {/* For creating new resume */}
-                <Route path="/card-page" element={<CardPage />} />
-                <Route path="/resume/:id" element={<ResumePage />} /> {/* For editing existing resume */}
+                <Route path="" element={<LandingPage />} />
+                <Route path="login" element={<Login />} />
+                <Route path="register" element={<Register />} />
+                <Route path="resume-page" element={<MainPage />} />
+                <Route path="resume" element={<ResumePage />} /> {/* For creating new resume */}
+                <Route path="card-page" element={<CardPage />} />
+                <Route path="resume/:id" element={<ResumePage />} /> {/* For editing existing resume */}
             </Routes>
         </HashRouter>
     );

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { app } from '../Firebase/Firebase';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { FaGoogle } from "react-icons/fa";
 
 function Register() {
@@ -18,7 +18,7 @@ function Register() {
         try {
             await createUserWithEmailAndPassword(auth, email, password);
             localStorage.setItem('isLoggedIn', true);
-            navigate('/login');
+            navigate('#/login');
         } catch (error) {
             setError('Registration failed. Please try again.');
             console.log(error);
@@ -30,7 +30,7 @@ function Register() {
         const provider = new GoogleAuthProvider();
         try {
             await signInWithPopup(auth, provider);
-            navigate('/resume-page');
+            navigate('#/resume-page');
         } catch (error) {
             console.log(error);
             setError('Google login failed. Please try again.');
@@ -99,7 +99,7 @@ function Register() {
                 <div className="flex justify-center mt-6 text-gray-400 text-sm">
                     <span>
                         Already have an account? 
-                        <a href="/login" className="text-white ml-1 hover:underline">Log In</a>
+                        <Link to="/login" className="text-white ml-1 hover:underline">Log In</Link>
                     </span>
                 </div>
             </form>
