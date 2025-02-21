@@ -17,6 +17,7 @@
     "firebase": "^11.3.0",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.2",
+    "jspdf-autotable": "^3.8.4",
     "openai": "^4.83.0",
     "rc-progress": "^4.0.0",
     "react": "^19.0.0",

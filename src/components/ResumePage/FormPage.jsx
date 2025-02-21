@@ -29,17 +29,19 @@ function FormPage() {
   return (
     <>
       <div className="max-w-4xl mx-auto p-5">
-        {/* Progress Bar */}
-        <div className="mb-4 w-full max-w-[60%] ml-20">
+        {/* Progress Bar with Percentage Display */}
+        <div className="mb-4 w-full max-w-[60%] ml-20 flex items-center gap-3">
           <Line 
             percent={progress} 
-            strokeWidth="3" 
+            strokeWidth="4" 
             strokeColor="#4CAF50" 
             trailColor="#d3d3d3" 
             trailWidth="2" 
             style={{ width: '100%' }} 
           />
+          <span className="font-semibold text-gray-700">{Math.round(progress)}%</span>
         </div>
+
         {/* Navigation Buttons */}
         <div className="flex justify-between items-center mb-4">
           <button className="hidden sm:block"></button>

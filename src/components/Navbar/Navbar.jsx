@@ -5,10 +5,9 @@ function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [loggedIn, setLoggedIn] = useState(false);
     const location = useLocation();
-    const navigate = useNavigate(); // Hook to programmatically navigate
+    const navigate = useNavigate(); 
 
     useEffect(() => {
-        // Check and set the logged-in state when the component mounts
         const storedLoginState = localStorage.getItem('isLoggedIn') === 'true';
         setLoggedIn(storedLoginState);
 
@@ -17,16 +16,12 @@ function Navbar() {
         };
 
         window.addEventListener("scroll", handleScroll);
-
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []); // Runs only on mount
+    }, []); 
 
     const handleLogout = () => {
-        // Remove the logged-in state on logout
         localStorage.removeItem('isLoggedIn');
-        setLoggedIn(false); // Immediately update the state to reflect logout
-
-        // Redirect to homepage after logout
+        setLoggedIn(false); 
         navigate('/');
     };
 
@@ -37,23 +32,12 @@ function Navbar() {
             <div className='text-3xl md:text-4xl font-bold text-blue-400'>
                 ResumeGenie
             </div>
-            <div className='hidden md:flex bg-fuchsia-600 text-white p-4 rounded-lg font-bold'>
-                {/* Conditionally render based on the loggedIn state */}
+            <div className='flex bg-fuchsia-600 text-white p-4 rounded-lg font-bold'>
                 {loggedIn ? (
-                    <>
-                        {/* Only show Logout button if logged in */}
-                        <button onClick={handleLogout} className='cursor-pointer'>Logout</button>
-                    </>
+                    <button onClick={handleLogout} className='cursor-pointer'>Logout</button>
                 ) : (
-                    // Show "Get Started" when not logged in
                     <NavLink to='/login' className='cursor-pointer'>Get Started</NavLink>
                 )}
-            </div>
-            {/* Mobile View (Hamburger Menu) */}
-            <div className='md:hidden'>
-                <button className="text-3xl font-bold text-blue-400" onClick={() => { /* Add logic for mobile menu */ }}>
-                    ☰
-                </button>
             </div>
         </div>
     );

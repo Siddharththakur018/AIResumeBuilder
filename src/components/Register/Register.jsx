@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { app } from '../Firebase/Firebase';
 import { useNavigate, Link } from 'react-router-dom';
-import { FaGoogle } from "react-icons/fa";
 
 function Register() {
     const [name, setName] = useState('');
@@ -22,18 +21,6 @@ function Register() {
         } catch (error) {
             setError('Registration failed. Please try again.');
             console.log(error);
-        }
-    };
-
-    const handleGoogleLogin = async () => {
-        const auth = getAuth(app);
-        const provider = new GoogleAuthProvider();
-        try {
-            await signInWithPopup(auth, provider);
-            navigate('#/resume-page');
-        } catch (error) {
-            console.log(error);
-            setError('Google login failed. Please try again.');
         }
     };
 
@@ -87,14 +74,6 @@ function Register() {
                 >
                     Sign Up
                 </button>
-
-                <div
-                    onClick={handleGoogleLogin}
-                    className="flex items-center justify-center w-full py-3 bg-[#222] text-white rounded-lg border border-gray-600 hover:bg-[#333] cursor-pointer transition duration-300 mb-6"
-                >
-                    <FaGoogle className="w-5 h-5 mr-3" />
-                    <span>Continue with Google</span>
-                </div>
 
                 <div className="flex justify-center mt-6 text-gray-400 text-sm">
                     <span>

@@ -7,6 +7,7 @@ import Register from './components/Register/Register';
 import ResumePage from './components/ResumePage/ResumePage';
 import Navbar from './components/Navbar/Navbar';
 import CardPage from './components/CardPage/CardPage';
+import ResumePreview from './components/ResumePage/ResumePreview'
 
 function AllRoutes() {
     return (
@@ -20,6 +21,7 @@ function AllRoutes() {
                 <Route path="resume" element={<ResumePage />} /> {/* For creating new resume */}
                 <Route path="card-page" element={<CardPage />} />
                 <Route path="resume/:id" element={<ResumePage />} /> {/* For editing existing resume */}
+                <Route path="/resume-preview" element={<ResumePreview />} />
             </Routes>
         </HashRouter>
     );
